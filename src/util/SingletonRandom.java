@@ -26,41 +26,34 @@ public class SingletonRandom
     }
 
     /**
-     * @param lowerLimit              returned values will always be
-     *                                greater-than-or-equal-to this value
-     * @param upperLimit              returned values will always be
-     *                                less-than-or-equal-to this value
+     * @param lowerLimit returned values will always be greater-than-or-equal-to
+     * this value
+     * @param upperLimit returned values will always be less-than-or-equal-to this
+     * value
      * @param standardDeviationSpread influences the shape of the "normal" curve,
-     *                                example cases of values for
-     *                                standardDeviationSpread:
-     *                                <ul>
-     *                                <li>1.0: distribution will be flatter, 68% of
-     *                                values naturally fall between lowerLimit and
-     *                                upperLimit, 32% (100%-68%) are outside limits
-     *                                and have to be snapped back into range</li>
-     *                                <li>2.0: distribution will be moderately
-     *                                peaked, 95% of values naturally fall between
-     *                                lowerLimit and upperLimit, 5% (100%-95%) are
-     *                                outside limits and have to be snapped back
-     *                                into range</li>
-     *                                <li>3.0: distribution will have sharp
-     *                                clustering around the mean, 99.7% of values
-     *                                naturally fall between lowerLimit and
-     *                                upperLimit, 0.3% (100%-99.7%) are outside
-     *                                limits and have to be snapped back into range
-     *                                since standardDeviationSpread is double, it
-     *                                can contain fractional values, not just the
-     *                                integral values shown here.</li>
-     *                                </ul>
+     * example cases of values for standardDeviationSpread:
+     * <ul>
+     * <li>1.0: distribution will be flatter, 68% of values naturally fall between
+     * lowerLimit and upperLimit, 32% (100%-68%) are outside limits and have to be
+     * snapped back into range</li>
+     * <li>2.0: distribution will be moderately peaked, 95% of values naturally fall
+     * between lowerLimit and upperLimit, 5% (100%-95%) are outside limits and have
+     * to be snapped back into range</li>
+     * <li>3.0: distribution will have sharp clustering around the mean, 99.7% of
+     * values naturally fall between lowerLimit and upperLimit, 0.3% (100%-99.7%)
+     * are outside limits and have to be snapped back into range since
+     * standardDeviationSpread is double, it can contain fractional values, not just
+     * the integral values shown here.</li>
+     * </ul>
      *
      * @return a random number that follows a normal (Gaussian) distribution within
-     *         the specified range.
+     * the specified range.
      */
     public double getNormalDistribution(double lowerLimit, double upperLimit, double standardDeviationSpread)
     {
 	if (standardDeviationSpread < 1.0 || standardDeviationSpread > 5.0) // if standardDeviationSpread is < 1.0 there
-									    // is a risk of excessive iterations of the
-									    // range-checking do-while() loop
+	    // is a risk of excessive iterations of the
+	    // range-checking do-while() loop
 	    throw new IllegalArgumentException();
 	double range = upperLimit - lowerLimit + 1.0;
 	double mean = (lowerLimit + upperLimit) / 2.0;

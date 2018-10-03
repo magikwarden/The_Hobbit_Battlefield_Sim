@@ -279,7 +279,7 @@ public abstract class Actor implements Serializable
      * objects.
      * 
      * @param defender is a reference to a different <i>Actor</i> object that will
-     *                 be engaged in the battle.
+     * be engaged in the battle.
      * @return The health of the <i>Actor</i> object that started the battle.
      */
     protected double combatRound(Actor defender)
@@ -423,7 +423,7 @@ public abstract class Actor implements Serializable
      * they will not move
      * 
      * @return this will make then stay at the point therefore no more movements for
-     *         that actor
+     * that actor
      */
     protected Point2D toWeak()
     {
@@ -545,7 +545,7 @@ public abstract class Actor implements Serializable
     {
 	this.tooltip = new Tooltip();
 	this.tooltip.setText(this.toString());// Note: This updates the text in the Tooltip that was installed earlier.
-					      // We re-use the originally installed Tooltip.
+	// We re-use the originally installed Tooltip.
     }
 
     /**
@@ -591,11 +591,11 @@ public abstract class Actor implements Serializable
 	out.writeDouble(getHealth()); // SimpleDoubleProperty health is NOT serializable, so I do it manually
 	out.writeDouble(getSpeed()); // SimpleDoubleProperty speed is NOT serializable, so I do it manually
 	out.writeDouble(getAvatar().getTranslateX()); // Node battlefieldAvatar is NOT serializable. It's TOO BIG
-						      // anyway, so I extract the elements that I need (here, translateX
-						      // property) to retain manually.
+	// anyway, so I extract the elements that I need (here, translateX
+	// property) to retain manually.
 	out.writeDouble(getAvatar().getTranslateY()); // Node battlefieldAvatar is NOT serializable. It's TOO BIG
-						      // anyway, so I extract the elements that I need (here, translateY
-						      // property) to retain manually.
+	// anyway, so I extract the elements that I need (here, translateY
+	// property) to retain manually.
     } // end writeObject() to support serialization
 
     // Explicit implementation of readObject, but called implicitly as a result

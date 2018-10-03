@@ -23,78 +23,78 @@ public final class ActorFactory
      */
     public enum Type
     {
-    HOBBIT()
-    {
-	@Override
-	public Actor create(Army armyAllegiance)
+	HOBBIT()
 	{
-	    return new Hobbit(armyAllegiance);
-	}
-    }, // HOBBIT is a constant, thus all UPPERCASE letters
-    WIZARD()
-    {
-	@Override
-	public Actor create(Army armyAllegiance)
+	    @Override
+	    public Actor create(Army armyAllegiance)
+	    {
+		return new Hobbit(armyAllegiance);
+	    }
+	}, // HOBBIT is a constant, thus all UPPERCASE letters
+	WIZARD()
 	{
-	    return new Wizard(armyAllegiance);
-	}
-    },
-    ORC()
-    {
-	@Override
-	public Actor create(Army armyAllegiance)
+	    @Override
+	    public Actor create(Army armyAllegiance)
+	    {
+		return new Wizard(armyAllegiance);
+	    }
+	},
+	ORC()
 	{
-	    return new Orc(armyAllegiance);
-	}
-    },
-    NAZGUL()
-    {
-	@Override
-	public Actor create(Army armyAllegiance)
+	    @Override
+	    public Actor create(Army armyAllegiance)
+	    {
+		return new Orc(armyAllegiance);
+	    }
+	},
+	NAZGUL()
 	{
-	    return new Nazgul(armyAllegiance);
-	}
-    },
-    RANDOM()
-    {
-	@Override
-	public Actor create(Army armyAllegiance)
+	    @Override
+	    public Actor create(Army armyAllegiance)
+	    {
+		return new Nazgul(armyAllegiance);
+	    }
+	},
+	RANDOM()
 	{
-	    return createActorRandomSelection(armyAllegiance);
-	}
-    };
+	    @Override
+	    public Actor create(Army armyAllegiance)
+	    {
+		return createActorRandomSelection(armyAllegiance);
+	    }
+	};
 	/**
 	 * Polymorphic method that will bind to the specific create() method for the
 	 * actual named type (e.g. HOBBIT); create an object of that type and return a
 	 * reference-to it.
 	 * 
 	 * @param armyAllegiance Used to define the <i>Army</i> allegiance of the
-	 *                       <i>Actor</i>.
+	 * <i>Actor</i>.
 	 * @return reference-to <i>Actor</i> object created through random number
-	 *         selection.
+	 * selection.
 	 */
 	public abstract Actor create(Army armyAllegiance); // supports polymorphic call where actual subclass objects
-							   // are created.
+	// are created.
     } // end enum Type
 
     public final static int numTypes = Type.values().length; // Auto detects the number of CONSTANTS that have been
-							     // defined "public" is acceptable because it is a CONSTANT
-							     // "final"
+    // defined "public" is acceptable because it is a CONSTANT
+    // "final"
 
     /**
      * Method that will select one of the available <i>Actor</i> types, create an
      * object of that type and return a reference-to that object.
      * 
      * @param armyAllegiance Used to define the <i>Army</i> allegiance of the
-     *                       <i>Actor</i>.
+     * <i>Actor</i>.
      * @return reference-to <i>Actor</i> object created through random number
-     *         selection. allegiance
+     * selection. allegiance
      */
     public final static Actor createActorRandomSelection(Army armyAllegiance)
     {
 	return Type.values()[(int) (Math.random() * (double) (numTypes - 4))].create(armyAllegiance); // subtract last
-												      // because one
-												      // enum type is
-												      // RANDOM
+	// because one
+	// enum type is
+	// RANDOM
     } // end createActorLightSelection()
 } // end class ActoryFactory

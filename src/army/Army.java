@@ -56,8 +56,8 @@ public class Army
      * <i>Army</i> constructor. It is used to automatically create an <i>Army</i>.
      * It takes a parameter <i>name</i> to identify the <i>Army</i> created.
      * 
-     * @param name      Accepts a string input from the user to give the <i>Army</i>
-     *                  a name.
+     * @param name Accepts a string input from the user to give the <i>Army</i> a
+     * name.
      * @param simulator
      */
     public Army(String name, Simulator simulator, Color color)
@@ -84,10 +84,10 @@ public class Army
      * The <i>populate</i> method is used to fill up the <i>Army</i> object that is
      * created. It takes two parameters <i>type</i> and <i>numToAdd</i>.
      * 
-     * @param type     This is used to declare what type of <i>Actor</i> subclass
-     *                 object is being used.
+     * @param type This is used to declare what type of <i>Actor</i> subclass object
+     * is being used.
      * @param numToAdd This is used to declare how many instances are to be created
-     *                 to fill up the ArrayList.
+     * to fill up the ArrayList.
      */
     @SuppressWarnings("static-access")
     public void populate(ActorFactory.Type type, int numToAdd)
@@ -136,7 +136,7 @@ public class Army
      * parameter <i>indexOfActorToEdit</i>.
      * 
      * @param indexOfActorToEdit This is used to look up the <i>Actor</i> in the
-     *                           ArrayList using the index.
+     * ArrayList using the index.
      * @return Actor
      */
     public Actor displayIndividualActor(int indexOfActorToEdit)
@@ -178,7 +178,7 @@ public class Army
      * object in the Army. It takes one parameter <i>indexOfActorToEdit</i>.
      * 
      * @param indexOfActorToEdit This is used to look up the <i>Actor</i> in the
-     *                           ArrayList using the index.
+     * ArrayList using the index.
      */
     public void edit(int indexOfActorToEdit)
     {
@@ -198,13 +198,13 @@ public class Army
     public void clearScreen()
     {
 	final ObservableList<Node> listJavaFXNodesOnBattlefield = simulator.getChildren(); // creating as a convenience
-	
+
 	for (Actor actor : this.collectionActors)
 	{
 	    actor.getAvatar().setVisible(false);
 	    listJavaFXNodesOnBattlefield.remove(actor.getAvatar());
 	}
-	while(this.collectionActors.size() > 0)
+	while (this.collectionActors.size() > 0)
 	{
 	    this.collectionActors.remove(0);
 	}
@@ -340,12 +340,12 @@ public class Army
     public void removeNowDeadActor(Actor nowDeadActor)
     {
 	final ObservableList<Node> listJavaFXNodesOnBattlefield = simulator.getChildren(); // creating as a convenience
-											   // variable, since the
-											   // removeNowDeadActor()
-											   // method needs to manage
-											   // many Node objects in the
-											   // simulator collection of
-											   // Node objects
+	// variable, since the
+	// removeNowDeadActor()
+	// method needs to manage
+	// many Node objects in the
+	// simulator collection of
+	// Node objects
 	// START: Create Notification message about the nowDeadActor: Create, then add
 	// two Transition Animations, packing in a ParallelTransition
 	{ // setup Stack Frame to allow re-use of variable identifiers "tt", "ft" and "pt"
@@ -355,25 +355,25 @@ public class Army
 	    final Duration duration = Duration.seconds(3.0);
 	    FadeTransition ft = new FadeTransition(duration);
 	    ft.setToValue(0.0); // no need to associate with the Text (message) here, that will be done in the
-				// ParallelTransition
+	    // ParallelTransition
 	    TranslateTransition tt = new TranslateTransition(duration);
 	    tt.setByY(200.0); // no need to associate with the Text (message) here, that will be done in the
-			      // ParallelTransition
+	    // ParallelTransition
 	    ParallelTransition pt = new ParallelTransition(message, ft, tt);
 	    pt.setOnFinished(event -> listJavaFXNodesOnBattlefield.remove(message));
 	    pt.play(); // couple both Transitions in the ParallelTransition and associate with Text
 	    listJavaFXNodesOnBattlefield.add(message); // it will play() and after playing the code in the
-						       // setOnFinished() method will called to remove the temporay
-						       // message from the scenegraph.
+	    // setOnFinished() method will called to remove the temporay
+	    // message from the scenegraph.
 	}
 	// END: Create Notification message about the nowDeadActor: Create, then add two
 	// Transition Animations, packing in a ParallelTransition
 
 	collectionActors.remove(nowDeadActor); // removes nowDeadActor from the collection of active Actor objects that
-					       // are part of this army.
+	// are part of this army.
 	listJavaFXNodesOnBattlefield.remove(nowDeadActor.getAvatar()); // removes the avatar from the screnegraph (the
-								       // Node object). The actor will disappear from
-								       // the screen.
+	// Node object). The actor will disappear from
+	// the screen.
 
 	// START: Create Final Announcement of Winning Army
 	if (collectionActors.size() == 0)
@@ -391,8 +391,8 @@ public class Army
 	    ft.setOnFinished(event -> listJavaFXNodesOnBattlefield.remove(winner));
 	    ft.play();
 	    listJavaFXNodesOnBattlefield.add(winner); // it will play() and after playing the code in the
-						      // setOnFinished() method will called to remove the temporary
-						      // winner from the scenegraph.
+	    // setOnFinished() method will called to remove the temporary
+	    // winner from the scenegraph.
 	}
 	// END: Create Final Announcement of Winning Army
     } // end removeNowDeadActor()

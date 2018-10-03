@@ -58,7 +58,7 @@ public class Simulator extends Group
 	this.forcesOfLight.startMoving();
 	this.forcesOfDarkness.startMoving();
     }
-    
+
     public void clear()
     {
 	this.forcesOfLight.clearScreen();
@@ -152,10 +152,11 @@ public class Simulator extends Group
     public final void buildListViewWindow()
     { // final because of its use in
       // the constructor
+
 	final double PREF_WIDTH = 700.0;
 	ListView<Actor> listView = new ListView<Actor>(this.forcesOfLight.getCollectionActors());
 	listView.setPrefWidth(PREF_WIDTH);
-	VBox vBoxLightArmy = new VBox(5.0, new Text(this.forcesOfLight.getName()), listView);
+	VBox vBoxLightArmy = new VBox(5.0, new Text(" " + this.forcesOfLight.getName()), listView);
 	listView = new ListView<Actor>(this.forcesOfDarkness.getCollectionActors());
 	listView.setPrefWidth(PREF_WIDTH);
 	VBox vBoxDarkArmy = new VBox(5.0, new Text(this.forcesOfDarkness.getName()), listView);
@@ -169,6 +170,7 @@ public class Simulator extends Group
 	this.stageListControllerWindow = new Stage(StageStyle.UTILITY);
 	this.stageListControllerWindow.initOwner(this.primaryStage);
 	this.stageListControllerWindow.setScene(new Scene(hBoxSceneGraphRoot));
+	this.stageListControllerWindow.setTitle("Army Lists");
     } // end buildListViewWindow()
 
     /**
@@ -196,5 +198,6 @@ public class Simulator extends Group
 	this.stageTableControllerWindow = new Stage(StageStyle.UTILITY);
 	this.stageTableControllerWindow.initOwner(this.primaryStage);
 	this.stageTableControllerWindow.setScene(new Scene(hBoxSceneGraphRoot));
+	this.stageListControllerWindow.setTitle("Army Tables");
     } // end buildTableViewWindow()
 }

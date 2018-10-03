@@ -46,7 +46,7 @@ public final class Input
      * Presents a prompt to the user and retrieves an <i>double</i> value.
      * 
      * @param prompt reference to a <i>String</i> object whose contents will be
-     *               displayed to the user as a prompt.
+     * displayed to the user as a prompt.
      * @return <i>double</i> value input from keyboard
      */
     public double getDouble(String prompt) throws NumberFormatException, RuntimeException
@@ -75,9 +75,9 @@ public final class Input
      * within the range of <i>low</i> to <i>high</i> (inclusive).
      * 
      * @param prompt reference to a <i>String</i> object whose contents will be
-     *               displayed to the user as a prompt.
-     * @param low    lower boundary on the range of legitimate values
-     * @param high   upper boundary on the range of legitimate values
+     * displayed to the user as a prompt.
+     * @param low lower boundary on the range of legitimate values
+     * @param high upper boundary on the range of legitimate values
      * @return <i>double</i> value input from keyboard
      */
     public double getDouble(String prompt, double low, double high) throws NumberFormatException, RuntimeException
@@ -108,7 +108,7 @@ public final class Input
      * Presents a prompt to the user and retrieves an <i>int</i> value.
      * 
      * @param prompt reference to a <i>String</i> object whose contents will be
-     *               displayed to the user as a prompt.
+     * displayed to the user as a prompt.
      * @return <i>int</i> value input from keyboard
      */
     public int getInt(String prompt) throws NumberFormatException, RuntimeException
@@ -137,9 +137,9 @@ public final class Input
      * within the range of <i>low</i> to <i>high</i> (inclusive).
      * 
      * @param prompt reference to a <i>String</i> object whose contents will be
-     *               displayed to the user as a prompt.
-     * @param low    lower boundary on the range of legitimate values
-     * @param high   upper boundary on the range of legitimate values
+     * displayed to the user as a prompt.
+     * @param low lower boundary on the range of legitimate values
+     * @param high upper boundary on the range of legitimate values
      * @return <i>int</i> value input from keyboard
      */
     public int getInt(String prompt, int low, int high) throws NumberFormatException, RuntimeException
@@ -170,7 +170,7 @@ public final class Input
      * Presents a prompt to the user and retrieves a <i>reference-to-String</i>.
      * 
      * @param prompt reference to a <i>String</i> object whose contents will be
-     *               displayed to the user as a prompt.
+     * displayed to the user as a prompt.
      * @return <i>reference-to-String</i> object created by keyboard input
      */
     public String getString(String prompt)
@@ -189,7 +189,7 @@ public final class Input
      * Presents a prompt to the user and retrieves a <i>boolean</i> value.
      * 
      * @param prompt reference to a <i>String</i> object whose contents will be
-     *               displayed to the user as a prompt.
+     * displayed to the user as a prompt.
      * @return <i>boolean</i> value input from keyboard
      */
     public boolean getBoolean(String prompt)
