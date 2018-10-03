@@ -33,8 +33,8 @@ public class Army
 {
     private final double ARMYGROUPRATIO = 35.0;
     private static final String FONT_NAME = "Copperplate Gothic Bold";
-    private static final Font NOTIFICATION_FONT_SMALL = new Font(FONT_NAME, 14.0);
-    private static final Font NOTIFICATION_FONT_LARGE = new Font(FONT_NAME, 36.0);
+    private static final Font NOTIFICATION_FONT_SMALL = new Font(FONT_NAME, 25.0);
+    private static final Font NOTIFICATION_FONT_LARGE = new Font(FONT_NAME, 45.0);
     // INSTANCE FIELDS
     /**
      * <i>name</i> is the instance field used to give a name to the army that is
@@ -349,7 +349,7 @@ public class Army
 	// START: Create Notification message about the nowDeadActor: Create, then add
 	// two Transition Animations, packing in a ParallelTransition
 	{ // setup Stack Frame to allow re-use of variable identifiers "tt", "ft" and "pt"
-	    Text message = new Text(240.0, 100.0, "Dead: " + nowDeadActor.getName());
+	    Text message = new Text(120.0, 120.0, "Dead: " + nowDeadActor.getName());
 	    message.setFont(NOTIFICATION_FONT_SMALL);
 	    message.setStroke(color);
 	    final Duration duration = Duration.seconds(3.0);
@@ -379,7 +379,7 @@ public class Army
 	if (collectionActors.size() == 0)
 	{ // Army has been wiped out, since no Actor objects remain in the collection.
 	  // Therefore . . . the opposing Army wins.
-	    Text winner = new Text(260.0, 300.0, "Winner: " + opposingArmy.getName());
+	    Text winner = new Text(205.0, 300.0, "Winner: " + opposingArmy.getName());
 	    winner.setFont(NOTIFICATION_FONT_LARGE);
 	    winner.setStroke(opposingArmy.color);
 	    winner.setEffect(opposingArmy.dropShadow);
