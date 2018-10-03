@@ -29,7 +29,7 @@ public class FXLauncher extends Application
     {
 	simulator = new Simulator(primaryStage); // Simulator HAS the two Army objects. It provides a communication path
 						 // between the JavaFX GUI and the Battlefield logic.
-	primaryStage.setTitle("Battlefield Simulator");
+	primaryStage.setTitle("The Hobbit Battlefield Simulator");
 	primaryStage.setScene(createScene()); // The Scene contains an organized collection of ALL the JavaFX Node
 					      // objects that are to be displayed on the screen.
 	primaryStage.show(); // Once the objects have been assembled, the window can be opened (like raising
