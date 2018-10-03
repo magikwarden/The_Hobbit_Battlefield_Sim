@@ -22,7 +22,7 @@ public class FXLauncher extends Application
      * Entry point to program execution for a JavaFX application
      * 
      * @param primaryStage Existing window that has been pre-built by the render
-     * engine.
+     *                     engine.
      */
     @Override
     public void start(Stage primaryStage) throws Exception
@@ -43,7 +43,7 @@ public class FXLauncher extends Application
      * Assembles the JavaFX Node objects that are to be displayed on the screen.
      * 
      * @return Scene is an object that contains an organized collection of ALL
-     * JavaFX Node objects that are to be displayed on the screen.
+     *         JavaFX Node objects that are to be displayed on the screen.
      */
     private Scene createScene()
     {
@@ -86,7 +86,7 @@ public class FXLauncher extends Application
      * display Image objects.
      * 
      * @return ImageView object that has been created from an Image object which was
-     * loaded from a disk-based file
+     *         loaded from a disk-based file
      */
     private ImageView createBackground()
     {
