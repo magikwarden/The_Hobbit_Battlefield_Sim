@@ -58,6 +58,12 @@ public class Simulator extends Group
 	this.forcesOfLight.startMoving();
 	this.forcesOfDarkness.startMoving();
     }
+    
+    public void clear()
+    {
+	this.forcesOfLight.clearScreen();
+	this.forcesOfDarkness.clearScreen();
+    }
 
     /**
      * when called actors stop moving

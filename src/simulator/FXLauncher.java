@@ -50,14 +50,8 @@ public class FXLauncher extends Application
 	ImageView imageViewBackground = createBackground(); // attempts to load a disk-based file into an Image object
 							    // which is then wrapped inside an ImageView object (and an
 							    // ImageView object can be added to a Scene)
-	double aspectRatio = imageViewBackground.getImage().getHeight() / imageViewBackground.getImage().getWidth(); // auto-adjust
-														     // the
-														     // window
-														     // aspect-ratio
-														     // based
-														     // on
-														     // the
-														     // image.
+	double aspectRatio = imageViewBackground.getImage().getHeight() / 
+		imageViewBackground.getImage().getWidth(); // auto-adjust the window aspect-ratio based on the image.
 	final double SCENEWIDTH = 1000.0;
 	final Group simulatorContainer = new Group(imageViewBackground, simulator); // Order matters here. The
 										    // imageViewBackground is first,
@@ -138,8 +132,11 @@ public class FXLauncher extends Application
 	suspendMenuItem.setOnAction(event -> simulator.suspend()); // create CALLBACK, that is, the code to execute when
 								   // triggered by user event (in this case,
 								   // simulator.suspend())
+	MenuItem clearMenuItem = new MenuItem("_Clear");
+	clearMenuItem.setOnAction(event -> simulator.clear());
+	
 	Menu menuRun = new Menu("_Run");
-	menuRun.getItems().addAll(populateMenuItem, runMenuItem, suspendMenuItem); // assemble MenuItems in the "Run"
+	menuRun.getItems().addAll(populateMenuItem, runMenuItem, suspendMenuItem, clearMenuItem); // assemble MenuItems in the "Run"
 										   // Menu
 
 	// Create the "Properties" Menu

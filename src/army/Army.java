@@ -195,6 +195,21 @@ public class Army
 
     }
 
+    public void clearScreen()
+    {
+	final ObservableList<Node> listJavaFXNodesOnBattlefield = simulator.getChildren(); // creating as a convenience
+	
+	for (Actor actor : this.collectionActors)
+	{
+	    actor.getAvatar().setVisible(false);
+	    listJavaFXNodesOnBattlefield.remove(actor.getAvatar());
+	}
+	while(this.collectionActors.size() > 0)
+	{
+	    this.collectionActors.remove(0);
+	}
+    }
+
     /**
      * help with stop moving actors
      */
